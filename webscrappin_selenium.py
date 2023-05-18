@@ -3,12 +3,8 @@ import os
 
 github_user = input('Input Github User: ')
 
-# browser = webdriver.Chrome()
-# browser.get('https://chromedriver.storage.googleapis.com/index.html?path=113.0.5672.63/')
 
-# Configure Selenium WebDriver (assuming you have installed the appropriate WebDriver for your browser)
-# os.environ['PATH'] += r"/home/suliman/web scrapping/chromedriver_linux64"
-driver = webdriver.Chrome()  # Change to the appropriate WebDriver (e.g., Firefox, Safari) if needed
+driver = webdriver.Chrome()
 
 # Load the GitHub user profile page
 url = 'https://github.com/' + github_user
@@ -29,7 +25,7 @@ followers_element = driver.find_element_by_xpath("//a[contains(@href, '?tab=foll
 followers_count = followers_element.text.strip()
 print("Number of Followers:", followers_count)
 
-# Fetch number of following using XPath
+# Fetch number of following
 following_element = driver.find_element_by_xpath("//a[contains(@href, '?tab=following')]/span[@class='text-bold color-fg-default']".format(github_user))
 following_count = following_element.text.strip()
 print("Number of Following:", following_count)
